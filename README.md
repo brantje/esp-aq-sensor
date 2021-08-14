@@ -7,7 +7,7 @@
 | PMS5003 | PM Sensor     | https://aliexpress.com/item/1005001793669306.html | https://esphome.io/components/sensor/pmsx003.html |
 | MH-Z19  | CO2 Sensor    | https://aliexpress.com/item/4000212024923.html    | https://esphome.io/components/sensor/mhz19.html   |
 | BME280  | Temp/Humidity | https://aliexpress.com/item/4000943231922.html    | https://esphome.io/components/sensor/bme280.html  |
-| SGP30   | TVOC          | https://nl.aliexpress.com/item/4000080488619.html | https://esphome.io/components/sensor/sgp30.html   |
+| SGP30   | TVOC          | https://aliexpress.com/item/4000080488619.html | https://esphome.io/components/sensor/sgp30.html   |
 
 ## Wiring
 For NodeMCU-32S 
