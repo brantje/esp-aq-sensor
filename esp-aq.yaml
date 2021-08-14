@@ -2,4 +2,4 @@ substitutions:
   devicename: esp-aqsensor
   upper_devicename: Airquality sensor
 
-<<: !include aq-sub.yaml
+<<: !include subs/aq-sub.yaml
