@@ -1,0 +1,108 @@
+esphome:
+  name: esp-sensor
+  platform: ESP32
+  board: nodemcu-32s
+
+# Enable Home Assistant API
+api:
+
+ota:
+  password: "xxxxxx"
+
+wifi:
+  ssid: "xxxx"
+  password: "xxxx"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+#  ap:
+#    ssid: "Esp-Sensor Fallback Hotspot"
+#    password: "xxxxxxxx"
+
+# captive_portal:
+
+
+# Enable logging
+logger:
+  #level: VERY_VERBOSE
+
+uart:
+  - id: uart_1
+    tx_pin: 18
+    rx_pin: 19
+    baud_rate: 9600
+  - id: uart_2
+    rx_pin: 26
+    baud_rate: 9600  
+i2c:
+  sda: 23
+  scl: 22
+  scan: true
+  id: bus_a
+switch:
+  - platform: gpio
+    pin: 
+      number: 27
+    id: pms_set
+
+sensor:
+  - platform: mhz19
+    uart_id: uart_1
+    co2:
+      name: "MH-Z19 CO2 Value"
+      state_class: "measurement"
+    #temperature:
+    #  name: "MH-Z19 Temperature"
+    #  state_class: "measurement"
+    update_interval: 60s
+    automatic_baseline_calibration: false
+    
+  - platform: pmsx003
+    type: PMSX003
+    uart_id: uart_2
+    
+    pm_1_0:
+      name: "Particulate Matter <1.0µm Concentration"
+      icon: "mdi:weather-fog"
+      state_class: "measurement"
+      filters:
+        - throttle: 60s
+    pm_2_5:
+      name: "Particulate Matter <2.5µm Concentration"
+      icon: "mdi:weather-fog"
+      state_class: "measurement"
+      filters:
+        - throttle: 60s      
+    pm_10_0:
+      name: "Particulate Matter <10.0µm Concentration"  
+      icon: "mdi:weather-fog"
+      state_class: "measurement"
+      filters:
+        - throttle: 60s   
+  - platform: bme280
+    temperature:
+      name: "BME280 Temperature"
+      state_class: "measurement"
+      oversampling: 16x
+      accuracy_decimals: 2
+    pressure:
+      name: "BME280 Pressure"
+      state_class: "measurement"
+      accuracy_decimals: 2
+    humidity:
+      name: "BME280 Humidity"
+      state_class: "measurement"
+      accuracy_decimals: 2
+    address: 0x76
+    update_interval: 60s  
+  - platform: bh1750
+    name: "BH1750 Illuminance"
+    state_class: "measurement"
+    address: 0x23
+    measurement_duration: 69
+    update_interval: 60s    
+interval:
+  - interval: 60s
+    then:
+      - switch.turn_on: pms_set
+      - delay: 20s
+      - switch.turn_off: pms_set  
