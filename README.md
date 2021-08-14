@@ -15,7 +15,7 @@ For NodeMCU-32S
 - SCL to 22
 - SDA to 23
 
-###
+### BH1750
 - VCC to 3.3V
 - GND to GND
 - SCL to 22
