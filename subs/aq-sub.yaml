@@ -101,6 +101,14 @@ sensor:
     address: 0x23
     measurement_duration: 69
     update_interval: 60s    
+
+binary_sensor:
+  - platform: gpio
+    pin: 21
+    name: "$devicename Motion"
+    device_class: motion    
+    filters:
+        - delayed_off: 60s     
 interval:
   - interval: 60s
     then:
