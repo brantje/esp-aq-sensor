@@ -12,7 +12,8 @@
 | MH-Z19  | CO2 Sensor    | https://aliexpress.com/item/4000212024923.html    | https://esphome.io/components/sensor/mhz19.html   |
 | BME280  | Temp/Humidity | https://aliexpress.com/item/4000943231922.html    | https://esphome.io/components/sensor/bme280.html  |
 | BH1750  | Light         | https://aliexpress.com/item/1005001944148809.html | https://esphome.io/components/sensor/bh1750.html  |
-| SGP30   | TVOC          | https://aliexpress.com/item/4000080488619.html | https://esphome.io/components/sensor/sgp30.html      |
+| SGP30   | TVOC          | https://aliexpress.com/item/4000080488619.html    | https://esphome.io/components/sensor/sgp30.html   |
+| HC-SR501| Motion        | https://aliexpress.com/item/32966240175.html      | https://esphome.io/cookbook/pir.html              |
 
 ## Wiring
 For NodeMCU-32S 
