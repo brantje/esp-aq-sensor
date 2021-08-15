@@ -24,7 +24,7 @@ For NodeMCU-32S
 - TXD to 26
 - SET to 27
 
-### BME280
+### BME680
 - VIN to 3.3V
 - GND to GND
 - SCL to 22
