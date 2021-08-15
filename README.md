@@ -43,4 +43,7 @@ For NodeMCU-32S
  - TX to pin 18
  - RX to pin 19
  
- 
+ ### HC-SR501
+ - VIN to VIN (5V)
+ - GND to GND
+ - OUT to 21
