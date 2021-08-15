@@ -79,6 +79,12 @@ sensor:
       state_class: "measurement"
       filters:
         - throttle: 60s   
+  - platform: bh1750
+    name: "$devicename Illuminance"
+    state_class: "measurement"
+    address: 0x23
+    measurement_duration: 69
+    update_interval: 60s            
   - platform: bme280
     temperature:
       name: "$devicename Temperature"
@@ -95,12 +101,6 @@ sensor:
       accuracy_decimals: 2
     address: 0x76
     update_interval: 60s  
-  - platform: bh1750
-    name: "$devicename Illuminance"
-    state_class: "measurement"
-    address: 0x23
-    measurement_duration: 69
-    update_interval: 60s    
 
 binary_sensor:
   - platform: gpio
@@ -108,7 +108,7 @@ binary_sensor:
     name: "$devicename Motion"
     device_class: motion    
     filters:
-        - delayed_off: 60s     
+        - delayed_off: 60s 
 interval:
   - interval: 60s
     then:
