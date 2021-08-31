@@ -7,7 +7,7 @@
 
 | Sensor  | Purpose       | Ali link                                          | Docs                                              |
 |---------|---------------|---------------------------------------------------|---------------------------------------------------|
-| ESP-32 30Pin|           |  https://aliexpress.com/item/4001340660273.html   |                                                   |
+| ESP-32 36Pin|           |  https://aliexpress.com/item/4001340660273.html   |                                                   |
 | PMS5003 | PM Sensor     | https://aliexpress.com/item/1005001793669306.html | https://esphome.io/components/sensor/pmsx003.html |
 | MH-Z19  | CO2 Sensor    | https://aliexpress.com/item/4000212024923.html    | https://esphome.io/components/sensor/mhz19.html   |
 | BME680  | Temp/Humidity/AQ | https://www.aliexpress.com/item/1005001602441073.html   | https://esphome.io/cookbook/bme280_environment.html  |
